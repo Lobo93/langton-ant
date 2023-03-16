@@ -65,7 +65,7 @@ function cycle() {
 	
 			// Change square color
 			board[ant.y][ant.x] ^= 1
-			board[ant.y][ant.x] === 0 ? context.fillStyle = color0 : context.fillStyle = color1
+			context.fillStyle = board[ant.y][ant.x] === 0 ? color0 : color1
 			context.fillRect(ant.x * squareSize, ant.y * squareSize, squareSize, squareSize)
 	
 			// Move forward 1 square
@@ -87,6 +87,8 @@ function cycle() {
 	// Call next cycle
 	setTimeout(cycle, interval)
 }
+
+// First cycle
 cycle()
 
 // Inputs
@@ -97,7 +99,8 @@ speed.addEventListener('input', () => {
 
 const play = document.getElementById('play')
 play.addEventListener('click', () => {
-	play.textContent = play.textContent === 'Stop' ? 'Play' : 'Stop'
+	play.classList.toggle('icon-play')
+	play.classList.toggle('icon-pause')
 	playing ^= 1
 })
 
@@ -107,6 +110,12 @@ reset.addEventListener('click', () => {
 	ants.length = 0
 	context.fillStyle = color0
 	context.fillRect(0, 0, boardWidth * squareSize, boardHeight * squareSize)
-	play.textContent = 'Stop'
+	play.classList.remove('icon-play')
+	play.classList.add('icon-pause')
 	playing = 1
+})
+
+const download = document.getElementById('download')
+download.addEventListener('click', () => {
+	download.href = canvas.toDataURL()
 })

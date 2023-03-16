@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
-		<title>Langton's Ant'</title>
+		<title>Formiga de Langton</title>
 	</head>
 	<body>
-		<h1>Click to add ants:</h1>
+		<h1>Clique para colocar mais formigas:</h1>
 		<canvas id="canvas" class="canvas"></canvas>
 		<div class="flex">
-			<button id="reset">Reset</button>
-			<button id="play">Stop</button>
+			<button id="reset" class="button icon-reset"></button>
+			<button id="play" class="button icon-pause"></button>
 			<input id="speed" type="range" min="0" max="3" step="0.05" value="1">
+			<a id="download" class="button icon-download" download="image.png"></a>
 		</div>
 		<script src="main.js"></script>
 	</body>
