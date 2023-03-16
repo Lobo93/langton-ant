@@ -8,6 +8,24 @@
 		<title>Formiga de Langton</title>
 	</head>
 	<body>
+		<nav id="menu" class="menu">
+			<div class="flex">
+				<button class="board-button board-clean active" data-board="clean"></button>
+				<button class="board-button board-dots" data-board="dots"></button>
+				<button class="board-button board-lines" data-board="lines"></button>
+				<button class="board-button board-box" data-board="box"></button>
+			</div>
+			<div class="flex">
+				<button class="color-button color-black active" data-color="#111"></button>
+				<button class="color-button color-red" data-color="#c11"></button>
+				<button class="color-button color-green" data-color="#2c2"></button>
+				<button class="color-button color-blue" data-color="#24e"></button>
+				<button class="color-button color-yellow" data-color="#eb1"></button>
+				<button class="color-button color-cyan" data-color="#2ce"></button>
+				<button class="color-button color-magenta" data-color="#e6f"></button>
+			</div>
+		</nav>
+		<button id="menuButton" class="button menu-button icon-bars"></button>
 		<h1>Clique para colocar mais formigas:</h1>
 		<canvas id="canvas" class="canvas"></canvas>
 		<div class="flex">
